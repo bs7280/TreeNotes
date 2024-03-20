@@ -24,12 +24,10 @@ if args.operation == "search":
     print(f"Search pattern: {args.pattern}")
     print("-"*80)
 
-    out = tree_schema(vault_path, args.pattern)
+    search_results = tree_schema(vault_path, args.pattern)
 
-    titles = list(set([x['subtitle'] for x in out]))
-
-    for row in titles[:15]:
-        print(row)
+    for row in search_results[:15]:
+        print(row['title'])
 
     #breakpoint()
 elif args.operation == "insert":

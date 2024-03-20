@@ -262,13 +262,16 @@ def tree_schema(vault_path, query):
 
         #matches = fnmatch.filter(combined_strings, f'*:{tree_q}')
     else:
-        matches = combined_strings
+        matches = list(subset_headers.keys()) #combined_strings
 
     # match on headers
     out = []
     for match in matches:
         if ':' not in match:
-            sys.stderr.write(f"Can't split fname `{fname}` from full path `{match}`")
+            basename = match
+            header = ''
+            dir, fname = os.path.split(basename)
+            #sys.stderr.write(f"Can't split fname `{fname}` from full path `{match}`")
         else:
             # get filname off of string before splitting parent dir + filename
             basename = match.split(':')[0]
