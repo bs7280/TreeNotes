@@ -11,6 +11,12 @@ Features (planned or implemented):
 - Insert notes into a 'node' 
 - Refactor a large note into sub notes
 
+Future features:
+- Combine notes by a glob pattern
+    - `$Daily:##Bookmarks` > a list of all bookmarks with annotation
+    - can be fed into other search featuers like a RAG model to find that bookmark I was thinking of
+        - bonus -> scrape the page too
+
 ## CLI
 `python src/cli.py search '*python*'`
 
