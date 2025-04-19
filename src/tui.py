@@ -16,6 +16,7 @@ from textual.widgets import Input, Markdown
 
 from utils import tree_schema
 
+
 class NoteSearchApp(App):
     """Searches ab dictionary API as-you-type."""
 
@@ -43,8 +44,8 @@ class NoteSearchApp(App):
     async def lookup_word(self, search_pattern: str) -> None:
         """Looks up a word."""
 
-        vault_path = '~/Documents/personalvault-1/'
-        if '~' in vault_path:
+        vault_path = "~/Documents/obsidian-vaults/vaults/personalvault-1/"
+        if "~" in vault_path:
             vault_path = os.path.expanduser(vault_path)
 
         # Use partial to pass arguments to tree_schema
@@ -53,7 +54,7 @@ class NoteSearchApp(App):
         # Call tree_schema asynchronously using asyncio.to_thread()
         search_results = await asyncio.to_thread(async_tree_schema)
 
-        #search_results = tree_schema(vault_path, search_pattern)
+        # search_results = tree_schema(vault_path, search_pattern)
 
         if search_pattern == self.query_one(Input).value:
             markdown = self.make_word_markdown(search_results)

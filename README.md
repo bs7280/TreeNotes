@@ -16,6 +16,11 @@ Future features:
     - `$Daily:##Bookmarks` > a list of all bookmarks with annotation
     - can be fed into other search featuers like a RAG model to find that bookmark I was thinking of
         - bonus -> scrape the page too
+- Append `vscode.shortcuts:## Run tests hotkey`
+    - Refernce these shortcuts easily with above detail
+- TUI support more UI options than alfred can
+    - Append / insert note - link or autocomplete another note
+- bulk merge links to note tree
 
 ## CLI
 `python src/cli.py search '*python*'`
